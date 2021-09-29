@@ -17,18 +17,22 @@
  * ? must use the forEach() array method - https://youtu.be/GNXZpM-15Xg
  */
 function addUpArrayElements(arr) {
-  // write your code here & return value
+  let sum = 0;
+  arr.forEach((number) => {
+    sum += number;
+  });
+  return sum;
 }
 
 /**
- * Squares each number if the array
+ * Squares each number in the array
  * @param {array} arr - the passed in array of numbers
  * @returns {array} - a new array with all the elements squared
  * ? example: [1, 2, 3, 4, 5] => [1, 4, 9, 16, 25]
  * ? must use the map() array method - https://youtu.be/nO4fLugOX9k
  */
 function makeSquareNumbers(arr) {
-  // write your code here & return value
+  return arr.map((num) => num ** 2);
 }
 
 /**
@@ -42,7 +46,7 @@ function makeSquareNumbers(arr) {
  * ? must use the filter() array method - https://youtu.be/JY5HUDMudew
  */
 function filterForLargeWords(arr, length) {
-  // write your code here & return value
+  return arr.filter((word) => word.length > length);
 }
 
 /**
@@ -53,7 +57,7 @@ function filterForLargeWords(arr, length) {
  * ? must use the find() array method - https://youtu.be/KCx0mQEC4Zw
  */
 function findTheFirstEvenNumber(arr) {
-  // write your code here & return value
+  return arr.find((num) => num % 2 === 0);
 }
 
 /**
@@ -65,7 +69,8 @@ function findTheFirstEvenNumber(arr) {
  * ? must use the sort() array method - https://youtu.be/3bLjcUmWveA
  */
 function sortCaseSensitive(arr) {
-  // write your code here & return value
+  const sortedArray = [...arr].sort();
+  return sortedArray;
 }
 
 /**
@@ -78,7 +83,7 @@ function sortCaseSensitive(arr) {
  * ? must the join() array method - https://youtu.be/90MVWda5DlM
  */
 function makeTheString(arr, separator) {
-  // write your code here & return value
+  return arr.join(separator);
 }
 
 /**
@@ -87,10 +92,11 @@ function makeTheString(arr, separator) {
  * @returns {array} - a new array with the elements reversed
  * ? example: [1, 2, 3, 4, 5] => [5, 4, 3, 2, 1]
  * ? must use the reverse() array method - https://mzl.la/3EXccdo
- *  must not use the revers on a shallow copy of the original array - https://bit.ly/39ASLc0
+ * must ?not? use the reverse on a shallow copy of the original array - https://bit.ly/39ASLc0
  */
 function reverseTheArray(arr) {
-  // write your code here & return value
+  const reversedArray = [...arr].reverse();
+  return reversedArray;
 }
 
 /**
@@ -102,7 +108,10 @@ function reverseTheArray(arr) {
  * ? must use the concat() array method - https://bit.ly/3lZkNE2
  */
 function makeMirrorArray(arr) {
-  // write your code here & return value
+  const otherSide = [...arr];
+  otherSide.pop();
+  otherSide.reverse();
+  return arr.concat(otherSide);
 }
 
 /**
@@ -115,7 +124,7 @@ function makeMirrorArray(arr) {
  * ? must use the slice() array method - https://youtu.be/ok-dya7hNm0
  */
 function dropRight(arr, n) {
-  // write your code here & return value
+  return arr.slice(0, arr.length - n);
 }
 
 /**
@@ -128,7 +137,7 @@ function dropRight(arr, n) {
  * ? must use the slice() array method - https://youtu.be/ok-dya7hNm0
  */
 function dropLeft(arr, n) {
-  // write your code here & return value
+  return arr.slice(n);
 }
 
 /**
@@ -141,7 +150,7 @@ function dropLeft(arr, n) {
  * ? must use the includes() array method - https://youtu.be/GNnHej31OGY
  */
 function checkArrayForValue(arr, val) {
-  // write your code here & return value
+  return arr.includes(val);
 }
 
 module.exports = {
